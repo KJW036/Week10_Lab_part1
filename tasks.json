@@ -13,5 +13,15 @@
         "description": "Buy groceries",
         "completed": false,
         "priority": "medium"
+    },
+    {
+        "description": "",
+        "completed": false,
+        "priority": "medium"
+    },
+    {
+        "description": "Do drills",
+        "completed": false,
+        "priority": "high"
     }
 ]
