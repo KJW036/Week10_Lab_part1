@@ -18,3 +18,38 @@ The application stores its data locally in a JSON file named tasks.json in the s
 Each task is stored as a JSON object with "description" and "completed" fields. 
 The data persists between program runs, as confirmed by testing where changes made during execution were saved and reloaded correctly.
 
+#4 Reflection on Development Process
+
+What was the hardest part of understanding this project?
+The most challenging aspect was grasping the interactive command-line interface (CLI) design. 
+Unlike web or GUI applications with visible components, this program relies entirely on text-based input/output in a terminal. 
+Understanding how the main loop processes user commands and manages state required careful reading of the code and multiple test runs. 
+The interactive nature made automated testing tricky, as I had to simulate user inputs programmatically using tools like printf and pipes. 
+Additionally, ensuring the program handled edge cases, such as invalid inputs or empty task lists, required thorough testing that was harder to automate compared to unit tests for individual functions.
+
+What change was easiest to make?
+Adding the "count" command was the simplest modification. 
+It involved creating a new function that simply printed the length of the tasks list and integrating it into the existing command loop. 
+This was straightforward because it didn't require altering the data structure, file I/O, or complex logic—just a basic addition to the menu system. 
+The change was minimal and didn't risk breaking existing functionality, making it quick to implement and verify.
+
+What change took the most testing or debugging?
+Implementing the priority feature required the most extensive testing and debugging. 
+Modifying the task data structure to include a "priority" field meant updating multiple functions: load_tasks for backward compatibility, add_task for user input validation, and list_tasks for display. 
+I had to ensure existing JSON files without priority fields would load correctly by adding default values. Testing involved verifying that new tasks accepted valid priorities (low/medium/high), defaulted correctly, displayed properly, and persisted to disk. 
+The interactive prompts added complexity, requiring careful input simulation during testing.
+
+How did GitHub help you manage your work today?
+GitHub served as an essential version control system throughout the development process. 
+By committing changes after each major modification—such as adding the count command and implementing priority—I could track the evolution of the codebase. 
+The git push commands ensured my work was backed up to a remote repository, providing safety against local data loss. GitHub's commit history allowed me to review what was changed and potentially revert if needed. 
+The integration with VS Code made it seamless to stage, commit, and push changes directly from the editor, streamlining the workflow for this iterative development task.
+
+If you had more time, what would you improve next?
+With additional time, I would enhance the application with several features to make it more robust and user-friendly. 
+First, I'd add sorting capabilities, allowing users to view tasks ordered by priority or completion status. 
+Implementing due dates would be valuable, requiring date input validation and potentially overdue notifications. 
+Better input validation could prevent errors, such as confirming deletions or handling non-numeric inputs for task numbers. 
+A search function to filter tasks by keywords would improve usability for larger lists. 
+Finally, I'd consider adding unit tests using a framework like pytest to automate verification of core functions, reducing the need for manual CLI testing. 
+These improvements would transform the simple task tracker into a more professional tool while maintaining its lightweight CLI approach.
