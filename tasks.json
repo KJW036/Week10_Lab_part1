@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "description": "Clean up room",
+        "completed": true,
+        "priority": "medium"
+    },
+    {
+        "description": "Do homework",
+        "completed": true,
+        "priority": "medium"
+    },
+    {
+        "description": "Buy groceries",
+        "completed": false,
+        "priority": "medium"
+    }
+]

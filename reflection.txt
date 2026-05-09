@@ -1,0 +1,20 @@
+#1 What is the purpose of this application? 
+This is a simple command-line task tracker application written in Python. 
+It allows users to manage a personal to-do list by adding tasks, viewing them, marking them as complete, 
+and deleting them.
+
+#2 What commands or actions does it support?
+The application supports the following commands:
+
+add: Adds a new task with a description (prompts for task description)
+list: Displays all tasks with their completion status (shows "Done" or "Not Done")
+complete: Marks a specified task as completed (prompts for task number)
+delete: Removes a specified task (prompts for task number)
+exit: Exits the application
+All commands are entered interactively in a loop until the user chooses to exit.
+
+#3 Where does it store its data?
+The application stores its data locally in a JSON file named tasks.json in the same directory as the program (tasks.json). 
+Each task is stored as a JSON object with "description" and "completed" fields. 
+The data persists between program runs, as confirmed by testing where changes made during execution were saved and reloaded correctly.
+
